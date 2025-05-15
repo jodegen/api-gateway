@@ -49,6 +49,7 @@ jobs:
             docker run -d \
               --name api-gateway \
               -p 8081:8081 \
+              -e AUTH_SERVICE_URL=${{ secrets.AUTH_SERVICE_URL }} \
               -e SPRING_PROFILES_ACTIVE=prod \
               -v /opt/microservices/api-gateway:/app/data \
               ghcr.io/jodegen/api-gateway:latest

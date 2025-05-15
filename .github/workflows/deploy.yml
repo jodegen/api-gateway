@@ -51,6 +51,7 @@ jobs:
               --network microservices-net \
               -p 8081:8081 \
               -e AUTH_SERVICE_URL=${{ secrets.AUTH_SERVICE_URL }} \
+              -e EUREKA_URL=${{ secrets.EUREKA_URL }} \
               -e SPRING_PROFILES_ACTIVE=prod \
               -v /opt/microservices/api-gateway:/app/data \
               ghcr.io/jodegen/api-gateway:latest
